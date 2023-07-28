@@ -1,10 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ToggleSwitch from './ToggleSwitch';
 
 function App() {
+  let [powerSwitch, setPower] = React.useState(false);
+
+  const onPowerSwitchChange = (checked) => {
+    setPower(checked);
+  };
+
   return (
-    <div className="App">
-      <div id="machine-wrapper">
+    <>
+      {/* <div id="machine-wrapper">
         <div id="button-wrapper">
           <div id="button-row-1">
             <button>Q</button><button>W</button><button>E</button>
@@ -17,15 +23,19 @@ function App() {
           </div>
         </div>
         <div id="controls-wrapper">
-          <label class="power-switch-label" for="power-switch"></label>
+          <div class='power-toggle'></div>
+          <label class="power-switch-label" for="power-switch">Power</label>
           <input type="checkbox" class="power-toggle-switch" name="power-switch" id="power-switch" />
           <div name="text-display"></div>
-          <label class="bank-switch-label" for="bank-switch"></label>
+          <label class="bank-switch-label" for="bank-switch">Bank</label>
           <input type="checkbox" class="bank-toggle-switch" name="bank-switch" id="bank-switch" />
         </div>
-      </div>
-    </div>
+  </div> */}
+  
+      <label htmlFor='power-switch'>Power</label>
+      <ToggleSwitch id='power-switch' checked={ powerSwitch } onChange={onPowerSwitchChange}  />
+    </>
   );
-}
+};
 
 export default App;
