@@ -1,5 +1,6 @@
 import React from 'react';
 import ToggleSwitch from './ToggleSwitch';
+import VolumeBar from './VolumeBar';
 
 function App() {
   const [powerSwitch, setPower] = React.useState(false);
@@ -35,6 +36,7 @@ function App() {
           <label htmlFor='bank-switch'>Bank</label>
           <ToggleSwitch id='bank-switch' checked={ bankSwitch } onChange={onBankSwitchChange}  />
         </div>
+          <VolumeBar />
     </div>
   );
 };
