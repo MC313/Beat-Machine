@@ -3,6 +3,13 @@ import PropTypes from 'prop-types';
 import './ToggleSwitch.scss';
 
 const ToggleSwitch = ({ id, checked, onChange, name, optionLabels, small, disabled }) => {
+    const handleKeyPress = (e) => {
+        if (e.keyCode !== 32) return;
+
+        e.preventDefault();
+        onChange(!checked);
+    };
+
         return (      
         <div className={'toggle-switch' + (small ? 'small-switch' : '')} >
             <input 
@@ -15,7 +22,13 @@ const ToggleSwitch = ({ id, checked, onChange, name, optionLabels, small, disabl
                 disabled={disabled}
             />
             {id ? (
-                <label className='toggle-switch-label' htmlFor={id}>
+                <label 
+                    className='toggle-switch-label' 
+                    htmlFor={id}
+                    tabIndex={disabled ? -1 : 1}
+                    onKeyDown={(e) => handleKeyPress(e)}
+                    
+                    >
                     <span 
                         className={
                         disabled
@@ -23,13 +36,16 @@ const ToggleSwitch = ({ id, checked, onChange, name, optionLabels, small, disabl
                         : 'toggle-switch-inner' 
                     }
                     data-yes={optionLabels[0]} 
-                    data-no={optionLabels[1]} />
+                    data-no={optionLabels[1]} 
+                    tabIndex={-1}
+                    />
                     <span 
                         className={
                             disabled
                             ? 'toggle-switch-switch toggle-switch-disabled'
                             : 'toggle-switch-switch'
                             }
+                            tabIndex={-1}
                     />
                 </label>
                 ) : null}            

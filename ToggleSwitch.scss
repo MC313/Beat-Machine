@@ -3,6 +3,7 @@ $label-colour: #bbb;
 $disabled-colour: #ddd;
 $toggle-colour: #2F855A;
 $white: #fff;
+$focus-colour: #ff0;
 
 
 //Styles
@@ -25,7 +26,17 @@ $white: #fff;
         border: 0 solid $label-colour;
         border-radius: 20px;
         margin: 0;
+        &-focus {
+            outline: none;
+            > span {
+                box-shadow: 0 0 2px 5px $focus-colour;
+            }
+        }
+        > span {
+            outline: none;
+        }
     }
+    
     &-inner {
         display: block;
         width: 200%;
@@ -101,9 +112,9 @@ $white: #fff;
         }
     }
     .toggle-switch-switch {
-        width: 20px;
-        height: 16px;
-        margin: 2px;
+        width: 27px;
+        height: 25px;
+        margin: 0.1px;
     }
     @media screen and (max-width: 991px) {
         transform: scale(0.9);
@@ -112,6 +123,6 @@ $white: #fff;
         transform: scale(0.825);
     }
     @media  screen and (max-width: 575px) {
-        transform: scale(0.75px);
+        transform: scale(0.75);
     }
 }

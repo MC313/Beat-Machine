@@ -2,15 +2,20 @@ import React from 'react';
 import ToggleSwitch from './ToggleSwitch';
 
 function App() {
-  let [powerSwitch, setPower] = React.useState(false);
+  const [powerSwitch, setPower] = React.useState(false);
+  const [bankSwitch, setBank] = React.useState(false);
+  
 
   const onPowerSwitchChange = (checked) => {
     setPower(checked);
   };
 
+  const onBankSwitchChange = (checked) => {
+    setBank(checked);
+  };
+
   return (
-    <>
-      {/* <div id="machine-wrapper">
+    <div id="machine-wrapper">
         <div id="button-wrapper">
           <div id="button-row-1">
             <button>Q</button><button>W</button><button>E</button>
@@ -24,17 +29,13 @@ function App() {
         </div>
         <div id="controls-wrapper">
           <div class='power-toggle'></div>
-          <label class="power-switch-label" for="power-switch">Power</label>
-          <input type="checkbox" class="power-toggle-switch" name="power-switch" id="power-switch" />
+          <label htmlFor='power-switch'>Power</label>
+          <ToggleSwitch id='power-switch' checked={ powerSwitch } onChange={onPowerSwitchChange}  />
           <div name="text-display"></div>
-          <label class="bank-switch-label" for="bank-switch">Bank</label>
-          <input type="checkbox" class="bank-toggle-switch" name="bank-switch" id="bank-switch" />
+          <label htmlFor='bank-switch'>Bank</label>
+          <ToggleSwitch id='bank-switch' checked={ bankSwitch } onChange={onBankSwitchChange}  />
         </div>
-  </div> */}
-  
-      <label htmlFor='power-switch'>Power</label>
-      <ToggleSwitch id='power-switch' checked={ powerSwitch } onChange={onPowerSwitchChange}  />
-    </>
+    </div>
   );
 };
 
