@@ -17,11 +17,12 @@ const VolumeBar = () => {
             <label 
                 className='volume-slider-label'
                 name='name'
-                htmlFor=''
+                htmlFor='volume-slider'
             
             ></label>
             <input
                 className='volume-slider'
+                id='volume-slider'
                 name='volume-slider'
                 type='range'
                 min={0}
