@@ -28,7 +28,7 @@ function App() {
           </div>
         </div>
         <div id="controls-wrapper">
-          <div class='power-toggle'></div>
+          <div className='power-toggle'></div>
           <label htmlFor='power-switch'>Power</label>
           <ToggleSwitch id='power-switch' checked={ powerSwitch } onChange={onPowerSwitchChange}  />
           <div name="text-display"></div>
