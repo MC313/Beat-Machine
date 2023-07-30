@@ -10,7 +10,7 @@ function App() {
    
   const handleClick = (e) => {
     setMute((prevValue) => !prevValue);
-    console.log('Clicked mute!', mute, e.keyCode, e.typeof);
+    console.log('Clicked mute!', mute, e);
   };
 
   const onPowerSwitchChange = (checked) => {
@@ -35,10 +35,11 @@ function App() {
           </div>
         </div>
         <div id="controls-wrapper">
-          <div className='power-toggle'></div>
           <label htmlFor='power-switch'>Power</label>
           <ToggleSwitch id='power-switch' checked={ powerSwitch } onChange={onPowerSwitchChange}  />
-          <div name="text-display"></div>
+          <div name="text-display">
+            
+          </div>
           <label htmlFor='bank-switch'>Bank</label>
           <ToggleSwitch id='bank-switch' checked={ bankSwitch } onChange={onBankSwitchChange}  />
         </div>
