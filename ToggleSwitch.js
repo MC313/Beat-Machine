@@ -35,8 +35,8 @@ const ToggleSwitch = ({ id, checked, onChange, name, optionLabels, small, disabl
                         ? 'toggle-switch-inner toggle-switch-disabled'
                         : 'toggle-switch-inner' 
                     }
-                    data-yes={optionLabels[0]} 
-                    data-no={optionLabels[1]} 
+                    data-on={optionLabels[0]} 
+                    data-off={optionLabels[1]} 
                     tabIndex={-1}
                     />
                     <span 

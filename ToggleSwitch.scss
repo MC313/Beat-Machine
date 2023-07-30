@@ -56,7 +56,7 @@ $focus-colour: #ff0;
             box-sizing: border-box;
         }
         &:before {
-            content: attr(data-yes);
+            content: attr(data-on);
             text-transform: uppercase;
             padding-left: 10px;
             background-color: $toggle-colour;
@@ -72,7 +72,7 @@ $focus-colour: #ff0;
         }
     }
     &-inner:after {
-        content: attr(data-no);
+        content: attr(data-off);
         text-transform: uppercase;
         padding-right: 10px;
         background-color: $label-colour;
