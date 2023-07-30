@@ -1,6 +1,6 @@
 import React from 'react';
 import ToggleSwitch from './ToggleSwitch';
-import VolumeBar from './VolumeBar';
+import VolumeSlider from './VolumeSlider';
 import Button from './Button';
 
 function App() {
@@ -42,7 +42,7 @@ function App() {
           <label htmlFor='bank-switch'>Bank</label>
           <ToggleSwitch id='bank-switch' checked={ bankSwitch } onChange={onBankSwitchChange}  />
         </div>
-          <VolumeBar />
+          <VolumeSlider />
           <Button 
             type='button' 
             name='Mute' 
