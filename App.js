@@ -6,12 +6,12 @@ import Button from './Button';
 function App() {
   const [powerSwitch, setPower] = React.useState(false);
   const [bankSwitch, setBank] = React.useState(false);
-  //const [mute, setMute] = React.useState(!mute);
+  const [mute, setMute] = React.useState(false);
    
-    const handleClick = (e) => {
-        console.log('Clicked!');
-        
-    };
+  const handleClick = (e) => {
+    setMute((prevValue) => !prevValue);
+    console.log('Clicked mute!', mute, e.keyCode, e.typeof);
+  };
 
   const onPowerSwitchChange = (checked) => {
     setPower(checked);
