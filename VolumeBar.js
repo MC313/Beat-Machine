@@ -4,13 +4,6 @@ import './VolumeBar.scss';
 
 const VolumeBar = () => {
     const [volume, setVolume] = React.useState(50);
-    //const [mute, setMute] = React.useState(!mute);
-   
-
-    const onButtonChange = (e) => {
-        console.log('Clicked!');
-        
-    };
 
     return (
         <div>
@@ -30,14 +23,6 @@ const VolumeBar = () => {
                 value={volume}
                 onChange={e => setVolume(e.target.value)}
             />
-            <button
-                type='button'
-                name='mute-button'
-                id='mute-button'
-                onChange={onButtonChange}
-                //value={mute}            
-            >Mute
-            </button>
         </div>
     )
 }

@@ -1,11 +1,17 @@
 import React from 'react';
 import ToggleSwitch from './ToggleSwitch';
 import VolumeBar from './VolumeBar';
+import Button from './Button';
 
 function App() {
   const [powerSwitch, setPower] = React.useState(false);
   const [bankSwitch, setBank] = React.useState(false);
-  
+  //const [mute, setMute] = React.useState(!mute);
+   
+    const handleClick = (e) => {
+        console.log('Clicked!');
+        
+    };
 
   const onPowerSwitchChange = (checked) => {
     setPower(checked);
@@ -37,6 +43,13 @@ function App() {
           <ToggleSwitch id='bank-switch' checked={ bankSwitch } onChange={onBankSwitchChange}  />
         </div>
           <VolumeBar />
+          <Button 
+            type='button' 
+            name='Mute' 
+            id='mute-button' 
+            onClick={ handleClick } 
+            label='Mute'
+          />
     </div>
   );
 };
