@@ -21,17 +21,31 @@ function App() {
     setBank(checked);
   };
 
+  const playBtnSound = (e) => {
+    console.log('Play time!')
+  }
+
   return (
-    <div id="machine-wrapper">
-        <div id="button-wrapper">
+    <div id="drum-machine">
+        <div id="display">
           <div id="button-row-1">
-            <button>Q</button><button>W</button><button>E</button>
+            <audio
+              id='Q'
+              className='clip'
+              src='https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3'
+              type='audio/mpeg'
+              ></audio>
+            <button className='drum-pad' id='Heater-1' onClick={playBtnSound}>Q</button>
+            <button className='drum-pad'>W</button>
+            <button className='drum-pad'>E</button>
           </div>
           <div id="button-row-2">
-            <button>A</button><button>S</button><button>D</button>
+            <button className='drum-pad'>A</button><button className='drum-pad'>S</button>
+            <button className='drum-pad'>D</button>
           </div>
           <div id="button-row-3">
-            <button>Z</button><button>X</button><button>C</button>
+            <button className='drum-pad'>Z</button><button className='drum-pad'>X</button>
+            <button className='drum-pad'>C</button>
           </div>
         </div>
         <div id="controls-wrapper">
