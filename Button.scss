@@ -11,3 +11,29 @@
     -moz-border-radius: 10%;
     -webkit-border-radius: 10%;
 }
+
+body {
+    text-align: center;
+    justify-content: center;
+}
+
+#drum-machine {
+    background-color: grey;
+    border: 3px solid #fff;
+    padding: 20px;
+    border-radius: 2%;
+    -moz-border-radius: 2%;
+    -webkit-border-radius: 2%;
+    box-shadow: inset 0 0 10px #242121;
+}
+
+#display, #controls-wrapper {
+    flex: left;
+}
+
+.controls-wrapper {
+    color: azure;
+    text-align: center;
+    font-weight: bold;
+    padding: 30%;
+}

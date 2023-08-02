@@ -54,9 +54,11 @@ function App() {
           <div name="text-display">
             
           </div>
+          <br />
           <label htmlFor='bank-switch'>Bank</label>
           <ToggleSwitch id='bank-switch' checked={ bankSwitch } onChange={onBankSwitchChange}  />
         </div>
+          <br />
           <VolumeSlider />
           <Button 
             type='button' 
