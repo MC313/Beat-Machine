@@ -12,12 +12,9 @@
     -webkit-border-radius: 10%;
 }
 
-body {
-    text-align: center;
-    justify-content: center;
-}
-
 #drum-machine {
+    justify-content: center;
+    text-align: center;
     background-color: grey;
     border: 3px solid #fff;
     padding: 20px;
@@ -27,13 +24,35 @@ body {
     box-shadow: inset 0 0 10px #242121;
 }
 
-#display, #controls-wrapper {
-    flex: left;
-}
+/* #display, #controls-wrapper {
+    flex: display;
+} */
 
 .controls-wrapper {
     color: azure;
-    text-align: center;
     font-weight: bold;
-    padding: 30%;
+    padding: 0%;
+    display: flex;
 }
+
+#text-display {
+    background-color: whitesmoke;
+    width: 9em;
+    height: 1em;
+    border: 3px solid green;
+    opacity: 75%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 1%;
+    border-radius: 2%;
+    -moz-border-radius: 2%;
+    -webkit-border-radius: 2%;
+    box-shadow: inset 0 0 10px #242121;
+    text-shadow: -1px -1px #666;
+    margin: .3% auto; 
+  
+    /* Following 3 properties center vertically */
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
