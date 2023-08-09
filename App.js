@@ -2,14 +2,14 @@ import React from 'react';
 import ToggleSwitch from './ToggleSwitch';
 import VolumeSlider from './VolumeSlider';
 import Button from './Button';
+import Drums from './Drums';
 
 function App() {
   const [powerSwitch, setPower] = React.useState(false);
   const [bankSwitch, setBank] = React.useState(false);
   const [mute, setMute] = React.useState(false);
   const [soundId, setSoundId] = React.useState('');
-
-   
+ 
   const handleClick = (e) => {
     setMute((prevValue) => !prevValue);
     console.log('Clicked mute!', mute, e);
@@ -24,7 +24,8 @@ function App() {
   };
 
   const playBtnSound = (e) => {
-  setSoundId(e.target.id);
+    e.preventDefault();
+    setSoundId(e.target.id);
   
     console.log('Play time!', soundId);
   };
@@ -35,7 +36,7 @@ function App() {
 
   return (
     <div id="drum-machine">
-        <div id="display">
+      <div id="display">
           <div id="button-row-1">
               <audio id='Q' type='audio/mpeg' src='https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3' className='clip'/>
               <a href="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3">
@@ -48,8 +49,8 @@ function App() {
             <button className='drum-pad' id='Heater-3' onClick={playBtnSound} onKeyDown={onKeyDown}>E</button></a>
           </div>
           <div id="button-row-2">
-            <audio id='A' type='audio/mpeg' src='https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3' className='clip'/>
-            <a href="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3">
+            <audio id='A' type='audio/mpeg' src='https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3' className='clip'/>
+            <a href="https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3">
               <button className='drum-pad' id='Heater-4' onClick={playBtnSound} onKeyDown={onKeyDown}>A</button></a>
             <audio id='S' type='audio/mpeg' src='https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3' className='clip'/>
             <a href="https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3">
