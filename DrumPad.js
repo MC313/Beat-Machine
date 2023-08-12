@@ -67,7 +67,7 @@ const DrumPad = ({ playSound }) => {
             {sound.key}
         <audio id={sound.key} key={sound.id} src={sound.src} className='clip'/>
     	</button>
-	);
+	    );
     });
 };
 
