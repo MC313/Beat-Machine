@@ -1,6 +1,4 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
-import './VolumeSlider.scss';
 
 const VolumeSlider = () => {
     const [volume, setVolume] = React.useState(50);

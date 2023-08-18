@@ -1,21 +1,14 @@
 import React from 'react';
+import './App.css';
 import ToggleSwitch from './ToggleSwitch';
 import VolumeSlider from './VolumeSlider';
 import Button from './Button';
-import { PadKeys } from './DrumPad';
+import { PadKeys, TextDisplay } from './DrumPad';
 
 function App() {
   const [powerSwitch, setPower] = React.useState(false);
-  const [bankSwitch, setBank] = React.useState(false);
   const [mute, setMute] = React.useState(false); 
-  const [soundId, setSoundId] = React.useState('');
   
-  const handleSoundId = (e) => {
-      setSoundId(e.target.id);
-      console.log(soundId);
-  };
-
- 
   const handleClick = (e) => {
     setMute((prevValue) => !prevValue);
     console.log('Clicked mute!', mute, e);
@@ -24,34 +17,24 @@ function App() {
   const onPowerSwitchChange = (checked) => {
     setPower(checked);
   };
-
-  const onBankSwitchChange = (checked) => {
-    setBank(checked);
-  };
   
   const playSound = (key) => {
     const audio = document.getElementById(key);
     audio.play();
-  
-    console.log('Play time!', audio);
+    //document.getElementById(key.id);
+    console.log(key);
   };
   
   return (
     <div id="drum-machine">
-      <PadKeys playSound={playSound} handleSoundId={handleSoundId} />
-      
+      <PadKeys playSound={playSound} />
        <div id="controls-wrapper">
          <br />
-        <div 
-          id="text-display"
-          >
-            {soundId}
-        </div>
+         <TextDisplay />
           <br />
-          <label htmlFor='power-switch'>Power</label>
+          <label htmlFor='power-switch'>Power
           <ToggleSwitch id='power-switch' checked={ powerSwitch } onChange={onPowerSwitchChange}  />
-          <label htmlFor='bank-switch'>Bank</label>
-          <ToggleSwitch id='bank-switch' checked={ bankSwitch } onChange={onBankSwitchChange}  />
+          </label>
           <VolumeSlider />
           <Button 
             type='button' 

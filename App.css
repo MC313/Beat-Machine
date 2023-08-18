@@ -1,31 +1,58 @@
 .App {
   text-align: center;
+  margin: 50px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.drum-pad {
+  width: 100px;
+  height: 100px;
+  margin: 30px auto;
+  font-weight: bold;
+  font-size: large;
+  background-color: rgb(49, 112, 49);
+  color:azure;
+  border-radius: 2%;
+  -moz-border-radius: 2%;
+  -webkit-border-radius: 2%;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.331);
+  border: 3% thick #0088dd;
+  border-radius: 10%;
+  -moz-border-radius: 10%;
+  -webkit-border-radius: 10%;
+  transition: all 0.2s ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.drum-pad:active {
+  translate: 3px 3px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#drum-machine {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+  background-color: grey;
+}
+
+.controls-wrapper {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: azure;
+  font-weight: bold;
+  margin: 50px auto;
 }
 
 #text-display {
-  display: flex;
-  justify-content: center;
-  text-align: center;
+  background-color: whitesmoke;
+  width: 9em;
+  height: 1em;
+  border: 3px solid green;
+  opacity: 75%;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  padding: 1%;
+  border-radius: 2%;
+  -moz-border-radius: 2%;
+  -webkit-border-radius: 2%;
+  box-shadow: inset 0 0 10px #242121;
+  text-shadow: -1px -1px #666;
 }
+
