@@ -58,10 +58,10 @@ const soundsArrOne = [
     },
 ];
 
-const DrumPad = ({ playSound, sound, index }) => {
+const DrumPad = ({ playSound, sound }) => {
     const handleKeyPress = (e) => {
         if (e.keyCode === sound.keyCode) {
-        playSound(sound.key);
+        playSound(sound.key, sound.id);
         };
     };
 
@@ -72,20 +72,19 @@ const DrumPad = ({ playSound, sound, index }) => {
    return (
         <button
             className='drum-pad'
-            onClick={() => playSound(sound.key)}>
+            onClick={() => playSound(sound.key, sound.id)}>
             {sound.key}
             <audio id={sound.key} src={sound.src} className='clip'/>
         </button>
         );
 };
 
-const PadKeys = ({ playSound, handleSoundId }) => {
+const PadKeys = ({ playSound }) => {
     return soundsArrOne.map((sound, index) => 
       { 
     console.log(index, sound);
         return (
         <DrumPad
-        handleSoundId={handleSoundId}
         playSound={playSound} 
         sound={sound} 
         index={index} />
@@ -93,12 +92,13 @@ const PadKeys = ({ playSound, handleSoundId }) => {
     });
 };
 
-const TextDisplay = () => {
+const TextDisplay = ({ soundId }) => {
     console.log('@TextDisplay')
     return (    
-        <div 
-            id="text-display"
+        <div
+            id='text-display'
         >
+            {soundId}
         </div>
     )
 };
