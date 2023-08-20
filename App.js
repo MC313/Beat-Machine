@@ -8,11 +8,6 @@ function App() {
   const [powerSwitch, setPower] = React.useState(false);
   const [mute, setMute] = React.useState(false);
   const [soundId, setSoundId] = React.useState('');
-  
-  const handleClick = (e) => {
-    setMute((prevValue) => !prevValue);
-    console.log('Clicked mute!', mute, e);
-  };
 
   const onPowerSwitchChange = (checked) => {
     setPower(checked);
@@ -22,7 +17,6 @@ function App() {
     setSoundId(id);
     const audio = document.getElementById(key);
     audio.play();
-    console.log(key);
   };
   
   return (
@@ -34,8 +28,7 @@ function App() {
           <Button 
             type='button' 
             name='Mute' 
-            id='mute-button' 
-            onClick={ handleClick } 
+            id='mute-button'
             label='Mute'
           />
       </div>

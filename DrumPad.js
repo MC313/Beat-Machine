@@ -80,14 +80,13 @@ const DrumPad = ({ playSound, sound }) => {
 };
 
 const PadKeys = ({ playSound }) => {
-    return soundsArrOne.map((sound, index) => 
-      { 
-    console.log(index, sound);
+    return soundsArrOne.map((sound) => 
+      {
         return (
         <DrumPad
+        key={sound.keyCode}
         playSound={playSound} 
-        sound={sound} 
-        index={index} />
+        sound={sound} />
       );
     });
 };
@@ -100,7 +99,7 @@ const TextDisplay = ({ soundId }) => {
         >
             {soundId}
         </div>
-    )
+    );
 };
 
 
