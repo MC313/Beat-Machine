@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Beat-Machine/static/css/main.c379e993.css",
+    "main.js": "/Beat-Machine/static/js/main.3e509ae2.js",
+    "static/js/787.7d591d56.chunk.js": "/Beat-Machine/static/js/787.7d591d56.chunk.js",
+    "index.html": "/Beat-Machine/index.html",
+    "main.c379e993.css.map": "/Beat-Machine/static/css/main.c379e993.css.map",
+    "main.3e509ae2.js.map": "/Beat-Machine/static/js/main.3e509ae2.js.map",
+    "787.7d591d56.chunk.js.map": "/Beat-Machine/static/js/787.7d591d56.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c379e993.css",
+    "static/js/main.3e509ae2.js"
+  ]
+}
